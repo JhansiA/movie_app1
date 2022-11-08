@@ -19,19 +19,19 @@ class RoundedButton extends StatelessWidget {
             colors: [kGradientStartColor, kGradientEndColor]),
           backgroundBlendMode: BlendMode.screen,
           borderRadius: BorderRadius.circular(20.0),),
-        child: Container(
-          height: 35.0,
-          width: 195,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: kBackgroundColor,
-            // gradient: LinearGradient(
-            //     colors: [kGradientStartColor1, kGradientEndColor1]),
-            borderRadius: BorderRadius.circular(20.0),),
-          child: TextButton(
-            onPressed: onPressed,
-            child: Text(title,style: const TextStyle(color: kTextColor,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
-          ),
+        child: GestureDetector(
+          onTap: onPressed,
+          child: Container(
+            height: 35.0,
+            width: 195,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: kBackgroundColor,
+              // gradient: LinearGradient(
+              //     colors: [kGradientStartColor1, kGradientEndColor1]),
+              borderRadius: BorderRadius.circular(20.0),),
+              child: Text(title,style: const TextStyle(color: kTextColor,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
+            ),
         ),
       ),
     );
