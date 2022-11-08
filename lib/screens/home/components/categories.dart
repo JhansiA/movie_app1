@@ -144,19 +144,21 @@ class CustomPath extends CustomClipper<Path> {
     final path = Path();
     if(shape == 'right'){
     path.lineTo(24, 0); //24 is radius shape size
+    path.lineTo(size.width-24, 20); //24 is radius shape size
     path.quadraticBezierTo(
-        size.width-14, 10, size.width, 44);
+        size.width, 20, size.width, 44);
     path.lineTo(size.width , size.height);
     path.lineTo(0, size.height);
     path.close();
     }
     else{
-      path.moveTo(size.width-24, 0);
-      path.quadraticBezierTo(
-          24, 10, 0, 44);
-      path.lineTo(0 , size.height);
+      path.moveTo(0, size.height);
       path.lineTo(size.width , size.height);
-      path.lineTo(size.width, 0);
+      path.lineTo(size.width , 0);
+      path.lineTo(size.width-24, 0);
+      path.lineTo(24 , 20);
+      path.quadraticBezierTo(
+          0, 20, 0, 44);
       path.close();
     }
     return path;
